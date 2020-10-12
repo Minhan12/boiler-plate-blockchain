@@ -13,6 +13,7 @@ const adminUserPasswd = 'adminpw';
  *
  * @param {*} FabricCAServices
  * @param {*} ccp
+ * @param {*} caHostName
  */
 exports.buildCAClient = (FabricCAServices, ccp, caHostName) => {
 	// Create a new CA client for interacting with the CA.
