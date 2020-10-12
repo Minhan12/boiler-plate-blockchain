@@ -1,6 +1,6 @@
 # Boilerplate Blockchain
 
-**Run the network:**
+## Run the network
 
 Navigate to network dir:  
 `cd network/`
@@ -19,7 +19,7 @@ Deploy javascript chaincode:
 `./network.sh deployCC -ccn basic -ccl javascript`
 
 
-**Start the application:**
+## Start the application
 
 Navigate to application dir:  
 `cd application/`
