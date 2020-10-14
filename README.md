@@ -2,39 +2,39 @@
 
 ## Run the network
 
-Navigate to network dir:  
+1. Unpack Binaries.zip within bin foldr
+
+2. Navigate to network dir:  
 `cd network/`
 
-Set path to bin:  
+3. Set path to bin:  
 `export PATH=${PWD}/../bin:$PATH`  
 `export FABRIC_CFG_PATH=$PWD/../config/`
 
-Ensure no containers are running and clear memory to start fresh:  
+4. Ensure no containers are running and clear memory to start fresh:  
 `./network.sh down`
 
-Create docker containers and create channel with CA:  
+5. Create docker containers and create channel with CA:  
 `./network.sh up createChannel -c mychannel -ca`
 
-Deploy javascript chaincode:  
-
-Set path to bin
+6. Set path to bin
 
 `export PATH=${PWD}/../bin:$PATH`
 `export FABRIC_CFG_PATH=$PWD/../config/`
 
-Ensure no containers are running and clear memory to start fresh
+7. Ensure no containers are running and clear memory to start fresh
 
 `./network.sh down`
 
-Create docker containers and create channel with CA
+8. Create docker containers and create channel with CA
 
 `./network.sh up createChannel -c mychannel -ca`
 
-Deploy chaincode with javascript
+9. Deploy javascript chaincode
 
 `./network.sh deployCC -ccn basic -ccl javascript`
 
-Set environment variables
+10. Set environment variables
 
 ```
 # Environment variables for Org1
@@ -46,14 +46,14 @@ Set environment variables
  export CORE_PEER_ADDRESS=localhost:7051
 ```
 
-Initialize ledger with assets
+11. Initialize ledger with assets
 
 ```
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n basic --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"InitLedger","Args":[]}'
 ```
 
 
-Run example query
+12. Run example query
 `peer chaincode query -C mychannel -n basic -c '{"Args":["GetAllAssets"]}'`
 
 
