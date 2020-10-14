@@ -72,7 +72,6 @@ function prettyJSONString(inputString) {
             const contract = network.getContract(chaincodeName);
             
             // Register endpoints
-
             app.get('/', async (req, res) => {
                 let result = await contract.evaluateTransaction('GetAllAssets')
                 res.send(prettyJSONString(result));
