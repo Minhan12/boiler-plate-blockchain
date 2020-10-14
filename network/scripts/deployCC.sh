@@ -3,9 +3,9 @@
 source scriptUtils.sh
 
 CHANNEL_NAME=${1:-"mychannel"}
-CC_NAME=${2:-"basic"}
+CC_NAME=${2:-"custom"}
 CC_SRC_PATH=${3:-"NA"}
-CC_SRC_LANGUAGE=${4:-"go"}
+CC_SRC_LANGUAGE=${4:-"javascript"}
 CC_VERSION=${5:-"1.0"}
 CC_SEQUENCE=${6:-"1"}
 CC_INIT_FCN=${7:-"NA"}
@@ -42,6 +42,9 @@ if [ "$CC_SRC_PATH" = "NA" ]; then
   if [ "$CC_NAME" = "basic" ]; then
     println $'\e[0;32m'asset-transfer-basic$'\e[0m' chaincode
     CC_SRC_PATH="../"
+  elif [ "$CC_NAME" = "custom" ]; then
+    println $'\e[0;32m'asset-custom$'\e[0m' chaincode
+    CC_SRC_PATH="../custom"
   elif [ "$CC_NAME" = "secured" ]; then
     println $'\e[0;32m'asset-transfer-secured-agreeement$'\e[0m' chaincode
     CC_SRC_PATH="../asset-transfer-secured-agreement"
@@ -55,7 +58,7 @@ if [ "$CC_SRC_PATH" = "NA" ]; then
     println $'\e[0;32m'asset-transfer-sbe$'\e[0m' chaincode
     CC_SRC_PATH="../asset-transfer-sbe"
   else
-    fatalln "The chaincode name ${CC_NAME} is not supported by this script. Supported chaincode names are: basic, ledger, private, sbe, secured"
+    fatalln "The chaincode name ${CC_NAME} is not supported by this script. Supported chaincode names are: basic, custom ledger, private, sbe, secured"
   fi
 
   # now see what language it is written in
