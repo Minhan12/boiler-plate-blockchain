@@ -28,9 +28,9 @@ Install node_modules
 Start the server
 `node server.js`
 
-Available endpoints
+Available endpoints. 
 
-GET: localhost:3000 - Return all assets on the ledger
-GET/:id : localhost3000/:id - Return single asset by id
-POST: localhost:3000/createAsset
+GET: localhost:3000 - Return all assets on the ledger. 
+GET/:id : localhost3000/:id - Return single asset by id. 
+POST: localhost:3000/createAsset. 
 
