@@ -40,7 +40,7 @@ if [ "$CC_SRC_PATH" = "NA" ]; then
   # first see which chaincode we have. This will be based on the
   # short name of the known chaincode sample
   if [ "$CC_NAME" = "basic" ]; then
-    println $'\e[0;32m\e[0m' chaincode
+    println $'\e[0;32m'asset-transfer-basic$'\e[0m' chaincode
     CC_SRC_PATH="../"
   elif [ "$CC_NAME" = "secured" ]; then
     println $'\e[0;32m'asset-transfer-secured-agreeement$'\e[0m' chaincode
