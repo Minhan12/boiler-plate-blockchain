@@ -13,7 +13,7 @@ const { buildCAClient, registerAndEnrollUser, enrollAdmin } = require(path.resol
 const { buildCCPOrg1, buildWallet } = require(path.resolve( __dirname, 'AppUtil.js'));
 
 const channelName = 'mychannel';
-const chaincodeName = 'basic';
+const chaincodeName = 'custom';
 const mspOrg1 = 'Org1MSP';
 const walletPath = path.join(__dirname, 'wallet');
 const org1UserId = 'appUser';
@@ -128,7 +128,7 @@ async function main() {
 			// This will be sent to both peers and if both peers endorse the transaction, the endorsed proposal will be sent
 			// to the orderer to be committed by each of the peer's to the channel ledger.
 			console.log('\n--> Submit Transaction: CreateAsset, creates new asset with ID, color, owner, size, and appraisedValue arguments');
-			await contract.submitTransaction('CreateAsset', 'asset13', 'yellow', '5', 'Tom', '1300');
+			await contract.submitTransaction('CreateAsset', 'asset200', 'yellow', '5', 'Tom', '1300');
 			console.log('*** Result: committed');
 
 			console.log('\n--> Evaluate Transaction: ReadAsset, function returns an asset with a given assetID');

@@ -6,7 +6,7 @@
 
 'use strict';
 
-const { Contract } = require('../../asset-custom/lib/node_modules/fabric-contract-api');
+const { Contract } = require('fabric-contract-api');
 
 class AssetTransfer extends Contract {
 
@@ -16,7 +16,7 @@ class AssetTransfer extends Contract {
                 ID: 'asset1',
                 Color: 'blue',
                 Size: 5,
-                Owner: 'Tomoko',
+                Owner: 'Ruben',
                 AppraisedValue: 300,
             },
             {
