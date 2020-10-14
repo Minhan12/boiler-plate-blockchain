@@ -23,12 +23,15 @@ Run the application
 `cd ../application`
 
 Install node_modules
+
 `npm i`
 
 Start the server
+
 `node server.js`
 
 Available endpoints. 
+
 
 GET: localhost:3000 - Return all assets on the ledger. 
 
