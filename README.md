@@ -31,6 +31,8 @@ Start the server
 Available endpoints. 
 
 GET: localhost:3000 - Return all assets on the ledger. 
+
 GET/:id : localhost3000/:id - Return single asset by id. 
+
 POST: localhost:3000/createAsset. 
 
